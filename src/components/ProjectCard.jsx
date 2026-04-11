@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, CheckCircle2 } from "lucide-react";
 
 const GithubIcon = ({ size = 24, className = "" }) => (
   <svg
@@ -24,22 +24,39 @@ const GithubIcon = ({ size = 24, className = "" }) => (
 export default function ProjectCard({ project }) {
   return (
     <motion.div 
-      whileHover={{ y: -5 }}
-      className="group relative flex flex-col justify-between h-full border border-gray-800/60 bg-[#1e293b]/30 backdrop-blur-sm p-7 rounded-2xl hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] transition-all duration-300"
+      whileHover={{ y: -8 }}
+      className="group relative flex flex-col justify-between h-full border border-gray-800/60 bg-[#1e293b]/20 backdrop-blur-md p-7 rounded-3xl hover:border-purple-500/40 hover:shadow-[0_20px_50px_rgba(168,85,247,0.1)] transition-all duration-500"
     >
-      <div>
-        <h2 className="text-2xl font-bold text-white group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-blue-500 group-hover:text-transparent group-hover:bg-clip-text transition-all duration-300">
+
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      
+      <div className="relative z-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300 mb-3">
           {project.title}
         </h2>
-        <p className="text-gray-400 my-4 text-sm leading-relaxed">
+        <p className="text-gray-400 mb-6 text-sm md:text-base leading-relaxed line-clamp-3">
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-6">
+        {project.features && project.features.length > 0 && (
+          <div className="mb-6 space-y-2">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">Key Features</h3>
+            <ul className="space-y-2">
+              {project.features.map((feature, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
+                  <CheckCircle2 size={14} className="mt-1 text-purple-500 flex-shrink-0" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="flex flex-wrap gap-2 mb-8 mt-4">
           {project.tech.map((techItem, index) => (
             <span 
               key={index}
-              className="text-xs font-semibold px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 shadow-sm"
+              className="text-[10px] md:text-xs font-bold px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/10 hover:border-purple-500/30 hover:bg-purple-500/5 transition-all duration-300"
             >
               {techItem}
             </span>
@@ -47,29 +64,31 @@ export default function ProjectCard({ project }) {
         </div>
       </div>
 
-      <div className="flex items-center gap-5 mt-auto pt-4 border-t border-gray-800/50">
-        {project.github !== "#" && (
-          <a 
-            href={project.github} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white hover:scale-105 transition-all"
-          >
-            <GithubIcon size={18} />
-            <span className="font-medium">Source</span>
-          </a>
-        )}
-        {project.live !== "#" && (
-          <a 
-            href={project.live} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 hover:scale-105 transition-all"
-          >
-            <ExternalLink size={18} />
-            <span className="font-medium">Live Demo</span>
-          </a>
-        )}
+      <div className="relative z-10 flex items-center justify-between mt-auto pt-6 border-t border-gray-800/50">
+        <div className="flex items-center gap-4">
+          {project.github !== "#" && (
+            <a 
+              href={project.github} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-all group/link"
+            >
+              <GithubIcon size={18} className="group-hover/link:scale-110 transition-transform" />
+              <span className="font-medium">Source</span>
+            </a>
+          )}
+          {project.live !== "#" && (
+            <a 
+              href={project.live} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-all group/link"
+            >
+              <ExternalLink size={18} className="group-hover/link:scale-110 transition-transform" />
+              <span className="font-medium">Live Demo</span>
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   );
