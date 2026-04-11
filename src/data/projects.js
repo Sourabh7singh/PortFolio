@@ -45,7 +45,7 @@ export const projects = [
       "WeatherAPI",
       "REST API (fetch)",
     ],
-    github: "https://github.com/Sourabh7singh/Weather-Application",
+    github: "https://github.com/Sourabh7singh/Weather_App",
     live: "https://weather-app-wheat-pi-24.vercel.app/",
   },
 
