@@ -75,6 +75,55 @@ export const projects = [
       "bcrypt",
     ],
     github: "https://github.com/Sourabh7singh/MernChatApp",
-    live: "https://mern-chat-app-ashen-delta.vercel.app", 
+    live: "https://mern-chat-app-ashen-delta.vercel.app/overview",
   },
+
+  {
+    title: "Accident Fatality Prediction",
+    description:
+      "A machine learning-based predictive system that analyzes large-scale traffic accident data to forecast accident severity. Achieved ~85% accuracy using Random Forest and Logistic Regression, enabling data-driven road safety insights and risk assessment.",
+    features: [
+      "Built predictive models (Random Forest, Logistic Regression) achieving ~84–85% accuracy",
+      "Performed extensive data preprocessing including cleaning, feature engineering, and encoding",
+      "Implemented multiple missing value strategies (Mean vs Mode) for performance comparison",
+      "Transformed temporal data into meaningful features like Time of Day",
+      "Analyzed feature importance to identify key factors influencing accident severity",
+      "Visualized trends and model performance using data analysis techniques",
+    ],
+    tech: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Matplotlib",
+      "Jupyter Notebook",
+    ],
+    github: "https://github.com/Sourabh7singh/Machine-Learning-Project",
+  },
+  {
+    title: "Digit Recognition System",
+    description:
+      "A deep learning-powered web application that recognizes handwritten digits in real-time using a CNN model trained on the MNIST dataset. Integrated with a Django backend to deliver fast and secure predictions through an interactive web interface.",
+    features: [
+      "Real-time handwritten digit recognition using a CNN model",
+      "Achieved high accuracy on MNIST dataset (trained on 60,000+ samples)",
+      "Implemented image preprocessing including resizing, grayscale conversion, and normalization",
+      "Built a responsive UI for image upload and instant predictions",
+      "Secure backend integration using Django with CSRF protection",
+      "Optimized model inference for fast and efficient predictions",
+    ],
+    tech: [
+      "Python",
+      "Django",
+      "TensorFlow",
+      "Keras",
+      "NumPy",
+      "Pillow (PIL)",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Gunicorn",
+    ],
+    github: "https://github.com/Sourabh7singh/DigitRecognitionSystem",
+  }
 ];

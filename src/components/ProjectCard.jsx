@@ -77,7 +77,7 @@ export default function ProjectCard({ project }) {
               <span className="font-medium">Source</span>
             </a>
           )}
-          {project.live !== "#" && (
+          {project.live && project.live !== "#" && (
             <a 
               href={project.live} 
               target="_blank" 
