@@ -29,7 +29,7 @@ export default function Contact() {
   };
 
   return (
-    <main className="min-h-screen px-6 md:px-16 py-20 bg-gradient-to-b from-[#0b0f1a] to-[#0f172a]">
+    <main className="min-h-screen px-6 md:px-16 py-16 md:py-24 bg-gradient-to-b from-[#0b0f1a] to-[#0f172a]">
       <div className="max-w-4xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -37,10 +37,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+          <h1 className="text-3xl md:text-6xl font-extrabold mb-6 tracking-tight">
             Get In <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">Touch</span>
           </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Have a project in mind or want to discuss opportunities? I'd love to hear from you. Drop me a message below!
           </p>
         </motion.div>
@@ -49,13 +49,13 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-[#1e293b]/30 backdrop-blur-sm border border-gray-800/60 p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden"
+          className="bg-[#1e293b]/30 backdrop-blur-sm border border-gray-800/60 p-6 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden"
         >
           {/* Subtle glow behind form */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 blur-[80px] rounded-full pointer-events-none"></div>
           
           <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name Field */}
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-300 flex items-center gap-2">

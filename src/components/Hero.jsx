@@ -44,26 +44,26 @@ export default function Hero() {
   }, [text, isDeleting, index]);
 
   return (
-    <div className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-10 bg-gradient-to-b from-[#0b0f1a] to-[#0f172a]">
+    <div className="min-h-[90vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12 md:py-20 bg-gradient-to-b from-[#0b0f1a] to-[#0f172a]">
 
       {/* LEFT CONTENT */}
       <section className="flex flex-col justify-center items-center md:items-start text-center md:text-left md:w-1/2 space-y-6">
 
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+        <h1 className="text-3xl md:text-6xl font-black leading-tight">
           Hi, I'm{" "}
           <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
             Saurabh
           </span>
         </h1>
 
-        <h2 className="text-xl md:text-3xl font-semibold text-gray-300 h-10">
+        <h2 className="text-lg md:text-3xl font-semibold text-gray-300 h-8 md:h-10">
           <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
             {text}
           </span>
           <span className="ml-1 animate-pulse">|</span>
         </h2>
 
-        <p className="text-gray-400 text-lg max-w-lg">
+        <p className="text-gray-400 text-base md:text-lg max-w-lg">
           I build scalable, high-performance full-stack applications with real-time
           features using Next.js, Socket.io, and modern web technologies.
         </p>

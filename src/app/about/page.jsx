@@ -21,7 +21,7 @@ export default function AboutPage() {
   };
 
   return (
-    <main className="min-h-screen px-6 md:px-16 py-20 bg-gradient-to-b from-[#0b0f1a] to-[#0f172a]">
+    <main className="min-h-screen px-6 md:px-16 py-16 md:py-24 bg-gradient-to-b from-[#0b0f1a] to-[#0f172a]">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
@@ -29,12 +29,12 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center md:text-left"
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+          <h1 className="text-3xl md:text-6xl font-extrabold mb-6 tracking-tight">
             About <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">Me</span>
           </h1>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* BIO SECTION */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}

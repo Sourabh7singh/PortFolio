@@ -25,16 +25,16 @@ export default function ProjectCard({ project }) {
   return (
     <motion.div 
       whileHover={{ y: -8 }}
-      className="group relative flex flex-col justify-between h-full border border-gray-800/60 bg-[#1e293b]/20 backdrop-blur-md p-7 rounded-3xl hover:border-purple-500/40 hover:shadow-[0_20px_50px_rgba(168,85,247,0.1)] transition-all duration-500"
+      className="group relative flex flex-col justify-between h-full border border-gray-800/60 bg-[#1e293b]/20 backdrop-blur-md p-6 md:p-8 rounded-3xl hover:border-purple-500/40 hover:shadow-[0_20px_50px_rgba(168,85,247,0.1)] transition-all duration-500"
     >
 
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       
       <div className="relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300 mb-3">
+        <h2 className="text-xl md:text-3xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300 mb-3">
           {project.title}
         </h2>
-        <p className="text-gray-400 mb-6 text-sm md:text-base leading-relaxed line-clamp-3">
+        <p className="text-gray-400 mb-6 text-[13px] md:text-base leading-relaxed line-clamp-3">
           {project.description}
         </p>
 

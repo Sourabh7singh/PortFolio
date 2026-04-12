@@ -6,7 +6,7 @@ import ProjectCard from "../../components/ProjectCard";
 
 export default function Projects() {
   return (
-    <main className="min-h-screen px-6 md:px-16 py-24 bg-[#0b0f1a] relative overflow-hidden text-white font-sans">
+    <main className="min-h-screen px-6 md:px-16 py-16 md:py-24 bg-[#0b0f1a] relative overflow-hidden text-white font-sans">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/10 blur-[120px] rounded-full" />
@@ -28,10 +28,10 @@ export default function Projects() {
           >
             Portfolio
           </motion.span>
-          <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter">
+          <h1 className="text-4xl md:text-7xl font-black mb-8 tracking-tighter">
             Creative <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-emerald-400 text-transparent bg-clip-text">Showcase</span>
           </h1>
-          <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-gray-400 text-base md:text-xl max-w-3xl mx-auto leading-relaxed font-medium">
             A curated selection of my most impactful work, ranging from complex full-stack architectures to refined frontend experiences.
           </p>
         </motion.div>
@@ -48,7 +48,7 @@ export default function Projects() {
               }
             }
           }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-stretch"
         >
           {projects.map((project, i) => (
             <motion.div 
