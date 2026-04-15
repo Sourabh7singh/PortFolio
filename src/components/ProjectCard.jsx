@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, CheckCircle2 } from "lucide-react";
 
@@ -22,13 +23,51 @@ const GithubIcon = ({ size = 24, className = "" }) => (
 );
 
 export default function ProjectCard({ project }) {
-  return (
-    <motion.div 
-      whileHover={{ y: -8 }}
-      className="group relative flex flex-col justify-between h-full border border-gray-800/60 bg-[#1e293b]/20 backdrop-blur-md p-6 md:p-8 rounded-3xl hover:border-purple-500/40 hover:shadow-[0_20px_50px_rgba(168,85,247,0.1)] transition-all duration-500"
-    >
+  const cardRef = useRef(null);
+  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0, glareX: 50, glareY: 50 });
 
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+    const glareX = (x / rect.width) * 100;
+    const glareY = (y / rect.height) * 100;
+
+    setTilt({ rotateX, rotateY, glareX, glareY });
+  };
+
+  const handleMouseLeave = () => {
+    setTilt({ rotateX: 0, rotateY: 0, glareX: 50, glareY: 50 });
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      whileHover={{ y: -8 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="group relative flex flex-col justify-between h-full border border-gray-800/60 bg-[#1e293b]/20 backdrop-blur-md p-6 md:p-8 rounded-3xl hover:border-purple-500/40 hover:shadow-[0_20px_50px_rgba(168,85,247,0.1)] transition-shadow duration-500"
+      style={{
+        transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+        transition: "transform 0.15s ease-out",
+      }}
+    >
+      {/* Gradient overlay on hover */}
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+      {/* Glare / light streak */}
+      <div
+        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        style={{
+          background: `radial-gradient(circle at ${tilt.glareX}% ${tilt.glareY}%, rgba(255,255,255,0.06) 0%, transparent 60%)`,
+        }}
+      />
       
       <div className="relative z-10">
         <h2 className="text-xl md:text-3xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300 mb-3">

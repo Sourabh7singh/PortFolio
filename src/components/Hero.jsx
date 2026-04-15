@@ -44,7 +44,7 @@ export default function Hero() {
   }, [text, isDeleting, index]);
 
   return (
-    <div className="min-h-[calc(100vh-80px)] flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-16 py-8 md:py-0 gap-4 md:gap-8 overflow-hidden">
+    <div className="min-h-[calc(100vh-80px)] flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-16 py-8 md:py-0 gap-4 md:gap-8 overflow-hidden relative z-[2]">
       {/* LEFT CONTENT */}
       <section className="flex flex-col justify-center items-center md:items-start text-center md:text-left md:w-1/2 space-y-5 md:space-y-6 order-1 md:order-1">
 
