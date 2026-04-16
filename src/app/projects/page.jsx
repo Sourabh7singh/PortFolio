@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { projects } from "../../data/projects";
+import { projects } from "../../data/constants";
 import ProjectCard from "../../components/ProjectCard";
 
 export default function Projects() {
@@ -14,13 +14,13 @@ export default function Projects() {
       </div>
 
       <div className="max-w-[1400px] mx-auto relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-20 text-center"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -36,7 +36,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={{
@@ -51,8 +51,8 @@ export default function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-stretch"
         >
           {projects.map((project, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }

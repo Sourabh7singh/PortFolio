@@ -29,8 +29,8 @@ function Robot({ isMobile }) {
 
         // Reset action after a set duration
         timeoutId = setTimeout(() => {
-           setRandomAction(null);
-           scheduleNextAction();
+          setRandomAction(null);
+          scheduleNextAction();
         }, 2500); // Action plays for 2.5 seconds
       }, delay);
     };
@@ -43,7 +43,7 @@ function Robot({ isMobile }) {
   // stop wave after 2s
   useEffect(() => {
     const t = setTimeout(() => setWave(false), 2000);
-    
+
     // Window focus/blur listeners to reset robot tracking
     const handleBlur = () => setIsActive(false);
     const handleFocus = () => setIsActive(true);
@@ -76,10 +76,10 @@ function Robot({ isMobile }) {
 
     // Override look targets if doing random action
     if (randomAction === "lookAround") {
-       targetY = Math.sin(clock.elapsedTime * 6) * 0.6;
+      targetY = Math.sin(clock.elapsedTime * 6) * 0.6;
     } else if (randomAction === "nod") {
-       targetX = Math.sin(clock.elapsedTime * 12) * 0.4;
-       targetY = 0;
+      targetX = Math.sin(clock.elapsedTime * 12) * 0.4;
+      targetY = 0;
     }
 
     ref.current.rotation.y = THREE.MathUtils.lerp(
@@ -97,7 +97,7 @@ function Robot({ isMobile }) {
     // floating animation — stays centered and shifted down so head isn't unclipped
     let baseY = isMobile ? -0.8 : -1.5;
     if (randomAction === "jump") {
-       baseY += Math.abs(Math.sin(clock.elapsedTime * 10)) * 0.4; // Bounce up
+      baseY += Math.abs(Math.sin(clock.elapsedTime * 10)) * 0.4; // Bounce up
     }
     ref.current.position.y = baseY + Math.sin(clock.elapsedTime) * 0.12;
 
@@ -170,10 +170,10 @@ export default function RobotScene() {
   return (
     <div
       className="w-full relative"
-      style={{ height: isMobile ? "320px" : "520px" }}
+      style={{ height: "520px" }}
     >
       {/* 💬 Speech Bubble */}
-      <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl text-sm text-white border border-white/20 animate-bounce z-20 whitespace-nowrap">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-xl text-sm text-white border border-white/20 animate-bounce z-20 whitespace-nowrap">
         Show Projects?
       </div>
 
@@ -184,14 +184,14 @@ export default function RobotScene() {
 
       <Canvas
         camera={{
-          position: [0, 0, isMobile ? 5.5 : 5.5],
-          fov: isMobile ? 50 : 45,
+          position: [0, 0, 4.5],
+          fov: 45,
         }}
         style={{ touchAction: "pan-y" }}
       >
         <ambientLight intensity={1.4} />
         <directionalLight position={[2, 3, 2]} intensity={0.8} />
-        <directionalLight position={[-2, 1, -1]} intensity={0.3} color="#a855f7" />
+        <directionalLight position={[-2, 1, -1]} intensity={0.9} color="#a855f7" />
 
         <Suspense fallback={<LoadingFallback />}>
           <Robot isMobile={isMobile} />

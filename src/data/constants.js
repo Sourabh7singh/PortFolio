@@ -26,7 +26,7 @@ export const projects = [
   },
 
   {
-    title: "Saurabh Weather Application",
+    title: "Weather Application",
     description:
       "A modern React-based weather application delivering real-time weather data, 3-day forecasts, and hourly insights with geolocation support. Features a premium glassmorphism UI, responsive design, and optimized rendering for smooth performance.",
     features: [
@@ -126,4 +126,47 @@ export const projects = [
     ],
     github: "https://github.com/Sourabh7singh/DigitRecognitionSystem",
   }
+];
+
+export const titles = [
+  "Full Stack Developer",
+  "Frontend Engineer",
+  "Backend Developer",
+  "Software Engineer",
+];
+
+export const skills = {
+  Frontend: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Framer Motion",
+    "HTML/CSS",
+    "JavaScript",
+    "Redux",
+    "ShadCN UI"
+  ],
+  Backend: [
+    "Node.js",
+    "Express",
+    "Django",
+    "MongoDB",
+    "PostgreSQL",
+    "Prisma ORM",
+    "REST APIs",
+    "JWT Authentication"
+  ],
+  Tools: [
+    "Git & GitHub",
+    "Socket.io",
+    "Postman",
+    "Vercel",
+    "Figma"
+  ]
+};
+export const journey = [
+  { year: "2025", title: "AI & ML Integration", desc: "Deep learning, digit recognition, predictive models" },
+  { year: "2024", title: "Advanced Architecture", desc: "Socket.io, Redis, real-time systems" },
+  { year: "2023", title: "Full Stack Projects", desc: "Built multiple MERN stack applications" },
+  { year: "2022", title: "Started Learning Web Development", desc: "Began with HTML, CSS, JavaScript" },
 ];

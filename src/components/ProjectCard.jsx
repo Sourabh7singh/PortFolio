@@ -71,9 +71,19 @@ export default function ProjectCard({ project }) {
       
       <div className="relative z-10">
         <h2 className="text-xl md:text-3xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300 mb-3">
-          {project.title}
+          {project.live && project.live !== "#" ? (
+            <a 
+            href={project.live} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-between gap-2 text-purple-400 hover:text-purple-300 transition-all group/link"
+            >
+              {project.title}
+              <ExternalLink size={30} className="group-hover/link:scale-110 transition-transform" />
+            </a>
+          ) : project.title }
         </h2>
-        <p className="text-gray-400 mb-6 text-[13px] md:text-base leading-relaxed line-clamp-3">
+        <p className="text-gray-400 mb-6 text-[13px] md:text-base leading-relaxed">
           {project.description}
         </p>
 
@@ -114,17 +124,6 @@ export default function ProjectCard({ project }) {
             >
               <GithubIcon size={18} className="group-hover/link:scale-110 transition-transform" />
               <span className="font-medium">Source</span>
-            </a>
-          )}
-          {project.live && project.live !== "#" && (
-            <a 
-              href={project.live} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-all group/link"
-            >
-              <ExternalLink size={18} className="group-hover/link:scale-110 transition-transform" />
-              <span className="font-medium">Live Demo</span>
             </a>
           )}
         </div>

@@ -2,15 +2,10 @@
 
 import { useEffect, useState } from "react";
 import RobotScene from "./Robot";
+import Link from "next/link";
+import { titles } from "@/data/constants";
 
 export default function Hero() {
-  const titles = [
-    "Full Stack Developer",
-    "Frontend Engineer (React / Next.js)",
-    "Backend Developer (Node.js / Django)",
-    "Software Engineer",
-  ];
-
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -70,19 +65,19 @@ export default function Hero() {
         {/* BUTTONS */}
         <div className="flex gap-3 sm:gap-4 mt-2 md:mt-4 flex-wrap justify-center md:justify-start">
 
-          <a
+          <Link
             href="/projects"
             className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium shadow-lg hover:scale-105 hover:shadow-purple-500/30 transition duration-300 text-sm sm:text-base"
           >
             🚀 View Projects
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/contact"
             className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-gray-600/50 bg-gray-800/30 backdrop-blur-sm text-gray-300 hover:bg-gray-800 hover:text-white transition duration-300 text-sm sm:text-base"
           >
             📩 Contact Me
-          </a>
+          </Link>
 
         </div>
       </section>

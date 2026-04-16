@@ -1,6 +1,6 @@
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 import ParticleBackground from "../components/ParticleBackground";
 import MouseGlow from "../components/MouseGlow";
 import ScrollProgress from "../components/ScrollProgress";

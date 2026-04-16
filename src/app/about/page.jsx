@@ -3,14 +3,9 @@
 import { motion } from "framer-motion";
 import { Code2, Server, Wrench, Sparkles, Coffee, Rocket, Layers, GitBranch } from "lucide-react";
 import AnimatedCounter from "../../components/AnimatedCounter";
+import { skills,journey } from "@/data/constants";
 
 export default function AboutPage() {
-  const skills = {
-    Frontend: ["Next.js", "React", "Tailwind CSS", "Framer Motion", "HTML/CSS", "JavaScript"],
-    Backend: ["Node.js", "Express", "Django", "MongoDB", "PostgreSQL", "Prisma ORM"],
-    Tools: ["Git & GitHub", "Docker", "Redis", "Socket.io", "Vercel", "Postman"]
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
@@ -21,17 +16,11 @@ export default function AboutPage() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   };
 
-  const journey = [
-    { year: "2022", title: "Started Learning Web Development", desc: "Began with HTML, CSS, JavaScript" },
-    { year: "2023", title: "Full Stack Projects", desc: "Built multiple MERN stack applications" },
-    { year: "2024", title: "Advanced Architecture", desc: "Socket.io, Redis, real-time systems" },
-    { year: "2025", title: "AI & ML Integration", desc: "Deep learning, digit recognition, predictive models" },
-  ];
 
   return (
     <main className="min-h-screen px-6 md:px-16 py-16 md:py-24 bg-gradient-to-b from-[#0b0f1a] to-[#0f172a] relative z-[2]">
       <div className="max-w-6xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -60,7 +49,7 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* BIO SECTION */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -85,7 +74,7 @@ export default function AboutPage() {
               <div className="space-y-0 relative">
                 {/* Vertical line */}
                 <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-gradient-to-b from-purple-500 via-blue-500 to-purple-500/20" />
-                
+
                 {journey.map((item, i) => (
                   <motion.div
                     key={i}
@@ -109,7 +98,7 @@ export default function AboutPage() {
           </motion.div>
 
           {/* SKILLS MATRIX */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"

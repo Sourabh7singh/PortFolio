@@ -1,3 +1,5 @@
+
+
 export default function Footer() {
   return (
     <footer className="border-t border-gray-800/60 bg-[#0b0f1a]/80 backdrop-blur-md">
@@ -5,8 +7,7 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} Saurabh Singh. All rights reserved.</p>
         <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="https://github.com/Sourabh7singh" target="_blank" className="hover:text-white hover:scale-105 transition-all">GitHub</a>
-          <a href="#" className="hover:text-white hover:scale-105 transition-all">LinkedIn</a>
-          <a href="#" className="hover:text-white hover:scale-105 transition-all">Twitter</a>
+          <a href="https://www.linkedin.com/in/saurabh-singh-6458451b2" target="_blank" className="hover:text-white hover:scale-105 transition-all">LinkedIn</a>
         </div>
       </div>
     </footer>
