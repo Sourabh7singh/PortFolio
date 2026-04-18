@@ -1,5 +1,29 @@
 export const projects = [
   {
+    title: "CRM Travel (SNE)",
+    description:
+      "An advanced, fully-fledged B2B Travel CRM and booking management ecosystem designed for travel agencies and corporate businesses. It streamlines the entire lifecycle of hotel reservations, banquet bookings, flight ticketing, and transportation logistics, featuring AI-driven quoting, dynamic task assignments, and automated vendor communications.",
+    features: [
+      "End-to-end booking workflow management for hotels, banquets, flights, and transport",
+      "Dynamic task board with interactive drag-and-drop UI for query status tracking",
+      "Automated email notifications and rate request generation for vendors",
+      "AI-powered quotation builder to generate highly customizable premium quotes",
+      "Role-based access control with comprehensive user and company administration",
+      "Real-time analytics dashboard with key performance statistics and KPI tracking",
+    ],
+    tech: [
+      "Next.js (App Router, v15)",
+      "Django (REST Framework)",
+      "PostgreSQL / SQLite",
+      "Celery & Redis",
+      "OpenAI & Generative AI",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    live: "https://snetravel.in/overview",
+  },
+  {
     title: "NearbuyDukan",
     description:
       "A hyperlocal digital ecosystem connecting consumers with local shops and healthcare institutions. Enables virtual queue management, digital billing, real-time chat, location-based discovery, and secure medical record storage—eliminating waiting time and paper-based workflows.",
