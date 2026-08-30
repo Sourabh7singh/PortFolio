@@ -188,9 +188,12 @@ export const skills = {
     "Figma"
   ]
 };
+
+
 export const journey = [
-  { year: "2025", title: "AI & ML Integration", desc: "Deep learning, digit recognition, predictive models" },
-  { year: "2024", title: "Advanced Architecture", desc: "Socket.io, Redis, real-time systems" },
-  { year: "2023", title: "Full Stack Projects", desc: "Built multiple MERN stack applications" },
-  { year: "2022", title: "Started Learning Web Development", desc: "Began with HTML, CSS, JavaScript" },
+  { year: "2026", title: "AI, Automation & Backend Engineering", desc: "Python backend development, AI integrations, automation, APIs and production systems" },
+  { year: "2025", title: "AI & ML Integration", desc: "Deep learning, digit recognition, predictive models and AI-powered applications" },
+  { year: "2024", title: "Advanced Architecture", desc: "Socket.io, Redis, real-time systems and scalable application architecture" },
+  { year: "2023", title: "Full Stack Projects", desc: "Built multiple MERN stack applications and explored modern web development" },
+  { year: "2022", title: "Started Learning Web Development", desc: "Began with HTML, CSS and JavaScript" },
 ];
